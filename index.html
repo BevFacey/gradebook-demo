@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTS Gradebook - Edna Blankenburg</title>
+    <style>
+        .checkbox-container {
+            display: flex;
+        }
+        .checkbox-column {
+            margin-right: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <p style="font-weight: bold;">CTS Gradebook - Edna Blankenburg</p>
+    <div id="filters">
+        <div class="checkbox-container">
+            <div class="checkbox-column">
+                <label for="period1">
+                    <input type="checkbox" id="period1" name="period1"> Period 1
+                </label><br>
+                <label for="period2">
+                    <input type="checkbox" id="period2" name="period2"> Period 2
+                </label><br>
+                <label for="period3">
+                    <input type="checkbox" id="period3" name="period3"> Period 3
+                </label><br>
+                <label for="period4">
+                    <input type="checkbox" id="period4" name="period4"> Period 4
+                </label><br>
+                <label for="period5">
+                    <input type="checkbox" id="period5" name="period5"> Period 5
+                </label><br>
+                <label for="period6">
+                    <input type="checkbox" id="period6" name="period6"> Period 6
+                </label>
+            </div>
+            <div class="checkbox-column">
+                <label for="bit">
+                    <input type="checkbox" id="bit" name="bit"> BIT
+                </label><br>
+                <label for="hrh">
+                    <input type="checkbox" id="hrh" name="hrh"> HRH
+                </label><br>
+                <label for="mdc">
+                    <input type="checkbox" id="mdc" name="mdc"> MDC
+                </label><br>
+                <label for="nat">
+                    <input type="checkbox" id="nat" name="nat"> NAT
+                </label><br>
+                <label for="tmt">
+                    <input type="checkbox" id="tmt" name="tmt"> TMT
+                </label>
+            </div>
+            <div class="checkbox-column hidden" id="bit-options">
+                <label for="cse">
+                    <input type="checkbox" id="cse" name="cse"> CSE
+                </label><br>
+                <label for="ent">
+                    <input type="checkbox" id="ent" name="ent"> ENT
+                </label><br>
+                <label for="fin">
+                    <input type="checkbox" id="fin" name="fin"> FIN
+                </label><br>
+                <label for="inf">
+                    <input type="checkbox" id="inf" name="inf"> INF
+                </label><br>
+                <label for="mam">
+                    <input type="checkbox" id="mam" name="mam"> MAM
+                </label><br>
+                <label for="net">
+                    <input type="checkbox" id="net" name="net"> NET
+                </label>
+            </div>
+            <div class="checkbox-column hidden" id="hrh-options">
+                <label for="ccs">
+                    <input type="checkbox" id="ccs" name="ccs"> CCS
+                </label><br>
+                <label for="cos">
+                    <input type="checkbox" id="cos" name="cos"> COS
+                </label><br>
+                <label for="cjs">
+                    <input type="checkbox" id="cjs" name="cjs"> CJS
+                </label><br>
+                <label for="est">
+                    <input type="checkbox" id="est" name="est"> EST
+                </label><br>
+                <label for="fod">
+                    <input type="checkbox" id="fod" name="fod"> FOD
+                </label><br>
+                <label for="hca">
+                    <input type="checkbox" id="hca" name="hca"> HCA
+                </label><br>
+                <label for="hcs">
+                    <input type="checkbox" id="hcs" name="hcs"> HCS
+                </label><br>
+                <label for="hss">
+                    <input type="checkbox" id="hss" name="hss"> HSS
+                </label><br>
+                <label for="lgs">
+                    <input type="checkbox" id="lgs" name="lgs"> LGS
+                </label><br>
+                <label for="rec">
+                    <input type="checkbox" id="rec" name="rec"> REC
+                </label><br>
+                <label for="tou">
+                    <input type="checkbox" id="tou" name="tou"> TOU
+                </label>
+            </div>
+            <div class="checkbox-column hidden" id="mdc-options">
+                <label for="des">
+                    <input type="checkbox" id="des" name="des"> DES
+                </label><br>
+                <label for="com">
+                    <input type="checkbox" id="com" name="com"> COM
+                </label><br>
+                <label for="fas">
+                    <input type="checkbox" id="fas" name="fas"> FAS
+                </label>
+            </div>
+            <div class="checkbox-column hidden" id="nat-options">
+                <label for="agr">
+                    <input type="checkbox" id="agr" name="agr"> AGR
+                </label><br>
+                <label for="ens">
+                    <input type="checkbox" id="ens" name="ens"> ENS
+                </label><br>
+                <label for="for">
+                    <input type="checkbox" id="for" name="for"> FOR
+                </label><br>
+                <label for="prs">
+                    <input type="checkbox" id="prs" name="prs"> PRS
+                </label><br>
+                <label for="wld">
+                    <input type="checkbox" id="wld" name="wld"> WLD
+                </label>
+            </div>
+            <div class="checkbox-column hidden" id="tmt-options">
+                <label for="con">
+                    <input type="checkbox" id="con" name="con"> CON
+                </label><br>
+                <label for="elt">
+                    <input type="checkbox" id="elt" name="elt"> ELT
+                </label><br>
+                <label for="fab">
+                    <input type="checkbox" id="fab" name="fab"> FAB
+                </label><br>
+                <label for="log">
+                    <input type="checkbox" id="log" name="log"> LOG
+                </label><br>
+                <label for="mec">
+                    <input type="checkbox" id="mec" name="mec"> MEC
+                </label><br>
+                <label for="pen">
+                    <input type="checkbox" id="pen" name="pen"> PEN
+                </label>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div id="gradebook">
+        <table>
+            <thead>
+                <tr id="table-headers">
+                    <th>Student</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <!-- Student rows will be populated by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    <script>
+        const filterOptions = {
+            bit: ['cse', 'ent', 'fin', 'inf', 'mam', 'net'],
+            hrh: ['ccs', 'cos', 'cjs', 'est', 'fod', 'hca', 'hcs', 'hss', 'lgs', 'rec', 'tou'],
+            mdc: ['des', 'com', 'fas'],
+            nat: ['agr', 'ens', 'for', 'prs', 'wld'],
+            tmt: ['con', 'elt', 'fab', 'log', 'mec', 'pen']
+        };
+
+        const students = ['John Doe', 'Jane Doe', 'John Smith', 'Jane Smith', 'John Johnson', 'Jane Johnson', 'John Brown', 'Jane Brown', 'John White', 'Jane White'];
+
+        function updateTableHeaders() {
+            const headers = document.getElementById('table-headers');
+            headers.innerHTML = '<th>Student</th>';
+            for (const key in filterOptions) {
+                filterOptions[key].forEach(option => {
+                    const checkbox = document.getElementById(option);
+                    if (checkbox && checkbox.checked) {
+                        const th = document.createElement('th');
+                        th.textContent = option.toUpperCase();
+                        headers.appendChild(th);
+                    }
+                });
+            }
+        }
+
+        function populateStudentRows() {
+            const tableBody = document.getElementById('table-body');
+            tableBody.innerHTML = '';
+            students.forEach(student => {
+                const tr = document.createElement('tr');
+                const td = document.createElement('td');
+                td.textContent = student;
+                tr.appendChild(td);
+                tableBody.appendChild(tr);
+            });
+        }
+
+        function addEventListeners() {
+            for (const key in filterOptions) {
+                document.getElementById(key).addEventListener('change', function() {
+                    document.getElementById(`${key}-options`).classList.toggle('hidden', !this.checked);
+                });
+                filterOptions[key].forEach(option => {
+                    document.getElementById(option).addEventListener('change', updateTableHeaders);
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            addEventListeners();
+            populateStudentRows();
+        });
+    </script>
+</body>
+</html>
